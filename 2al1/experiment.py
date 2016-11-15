@@ -57,8 +57,25 @@ def select_color_channel(channel):
     cv2.imshow("cropped", cropped);
     cv2.waitKey(0);
 
+def color_channel_historgram(channel):
+    
+    image = cv2.imread("images/bubu.jpg", channel);
+    plot.hist(image.ravel(), 256, [0, 256]);
+    plot.show();
+    
+def add_images():
+    
+    image1 = cv2.imread("images/bubu.jpg");
+    image2 = cv2.imread("images/dino.jpg");
+    
+    cv2.imshow("merged", image1/2 + image2/2);
+    cv2.waitKey(0);
+    
+            
+        
 
 if __name__ == '__main__':
     
+    add_images();
     
     
