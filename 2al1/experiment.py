@@ -71,11 +71,25 @@ def add_images():
     cv2.imshow("merged", image1/2 + image2/2);
     cv2.waitKey(0);
     
-            
-        
+
+def scale_by_factor(factor):
+    
+    image = cv2.imread("images/bubu.jpg");
+    
+    cv2.imshow("scaled", image * factor);
+    cv2.waitKey(0);
+
+def gaussian_channel_noise():
+    
+    image = cv2.imread("images/dino.jpg");
+    
+    noise = np.zeros((480, 640), dtype=np.uint8);
+    cv2.randn(noise, (0), (99));
+    cv2.imshow("pic", image[:,:,2] + noise);
+    cv2.waitKey(0);
+    
+    
 
 if __name__ == '__main__':
     
-    add_images();
-    
-    
+    gaussian_noise();
