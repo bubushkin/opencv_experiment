@@ -88,8 +88,6 @@ def gaussian_channel_noise():
     cv2.imshow("pic", image[:,:,2] + noise);
     cv2.waitKey(0);
     
-    
-
 if __name__ == '__main__':
     
-    gaussian_noise();
+    gaussian_channel_noise();
